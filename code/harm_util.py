@@ -62,7 +62,7 @@ client = OpenAI(api_key='YOUR_API_KEY')
 # For evaluation, we use gpt-3.5-turbo-1106 for more accurate results in our paper. Otherwise, Llama-3-8B is used for evaluation.
 # Comment the following 4 lines to use GPTs for evaluation.
 llm_judge_name='Llama-3-8B'
-device_judge = 'cuda:5'
+device_judge = 'cpu'
 model_judge = AutoModelForCausalLM.from_pretrained("meta-llama/Meta-Llama-3-8B-Instruct", torch_dtype='auto').to(device_judge)
 tok_judge = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B-Instruct")
 
